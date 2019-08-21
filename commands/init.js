@@ -91,7 +91,8 @@ module.exports = prompt(question).then(({
             packageJson.name = name;
             packageJson.description = description;
             packageJson.author = author;
-            // console.log(packageJson)
+
+            const {scripts} = packageJson;
             const updatePackageJson = JSON.stringify(packageJson, null, 2);
 
             fs.writeFile(`./${projectName}/package.json`, updatePackageJson, 'utf8', function (err) {
@@ -100,14 +101,20 @@ module.exports = prompt(question).then(({
                     console.error(err);
                     return;
                 } else {
+                    let log = '';
+                    Object.keys(scripts).forEach(key => {
+                        log += `
+                        ${chalk.yellow(`npm run ${key}`)}`
+                    });
                     spinner.stop();
                     console.log(chalk.green('great! the project init successfully!'));
                     console.log(`
             ${chalk.bgWhite.black('   Run Application  ')}
             ${chalk.yellow(`cd ${name}`)}
             ${chalk.yellow('npm install / cnpm install')}
-            ${chalk.yellow('npm start / npm run dev')}
-            ${chalk.yellow('-----------------------')}
+            ${chalk.yellow('run app cmd:')}
+            ${log}
+            
             ${chalk.green('Start working hard now')}
           `);
                 }
