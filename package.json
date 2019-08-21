@@ -1,13 +1,22 @@
 {
-  "name": "tool",
+  "name": "project-generation",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "项目自动生成工具",
+  "main": "",
+  "homepage": "",
+  "bin": {
+    "viper-cli": "bin/index"
+  },
+  "keywords": [
+    "project",
+    "tool",
+    "cli"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "lijiahao8898",
+  "license": "MIT",
   "dependencies": {
     "chalk": "^2.4.2",
     "commander": "^3.0.0",

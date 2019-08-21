@@ -1,23 +1,28 @@
 #!/usr/bin/env node
 process.env.NODE_PATH = __dirname + '/../node_modules/';
+
 const {resolve} = require('path');
 const res = command => resolve(__dirname, '../commands/', command);
 const program = require('commander');
+const packageJSON = require('../package');
+const isDir = require('../utils/isDir');
 
-program.version(require('../package').version);
 
-program.usage('<command>');
+program.version(packageJSON.version, '-v, --version');
+program.usage('<command> [options]');
 
 program.command('init')
-    .option('-i, --init', 'init new project')
     .description('Generate a new project')
+    .option('-i, --init [name]', 'init a new project')
     .alias('i')
-    .action(() => {
+    .action(async (name, cmd) => {
+        if(typeof name === 'string') {
+            await isDir(name);
+        }
         require(res('init'));
     });
 
 program.parse(process.argv);
-program.option('-i, --init', 'init new project');
 
 if (!program.args.length) {
     program.help();
