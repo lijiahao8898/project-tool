@@ -8,13 +8,13 @@ const path = require('path');
 
 const option = program.parse(process.argv).args[0];
 const defaultName = typeof option === 'string' ? option : 'project' + (new Date()).getTime();
-const tplList = require(`${__dirname}/../templates`);
+const tplList = require(`${__dirname}/../template/templates`);
 const tplLists = Object.keys(tplList) || [];
 const question = [
     {
         type: 'input',
         name: 'name',
-        message: 'What is the project name ?',
+        message: chalk.green('What is the project name ?'),
         default: defaultName,
         filter (val) {
             return val.trim();
@@ -29,7 +29,7 @@ const question = [
     }, {
         type: 'list',
         name: 'template',
-        message: 'Please select appropriate project template.',
+        message: chalk.green('Please select appropriate project template.'),
         choices: tplLists,
         default: tplLists[0],
         validate (val) {
@@ -41,7 +41,7 @@ const question = [
     }, {
         type: 'input',
         name: 'description',
-        message: 'What is the project description ?',
+        message: chalk.green('What is the project description ?'),
         default: 'project',
         validate (val) {
             return true;
@@ -52,7 +52,7 @@ const question = [
     }, {
         type: 'input',
         name: 'author',
-        message: 'Please enter the project Author.',
+        message: chalk.green('Please enter the project Author.'),
         default: 'author',
         validate (val) {
             return true;
@@ -91,7 +91,7 @@ module.exports = prompt(question).then(({
             packageJson.name = name;
             packageJson.description = description;
             packageJson.author = author;
-            console.log(packageJson)
+            // console.log(packageJson)
             const updatePackageJson = JSON.stringify(packageJson, null, 2);
 
             fs.writeFile(`./${projectName}/package.json`, updatePackageJson, 'utf8', function (err) {
@@ -105,9 +105,10 @@ module.exports = prompt(question).then(({
                     console.log(`
             ${chalk.bgWhite.black('   Run Application  ')}
             ${chalk.yellow(`cd ${name}`)}
-            ${chalk.yellow('npm install or cnpm install')}
-            ${chalk.yellow('npm start or npm run dev')}
-            ${chalk.green('   Start working hard now~   ')}
+            ${chalk.yellow('npm install / cnpm install')}
+            ${chalk.yellow('npm start / npm run dev')}
+            ${chalk.yellow('-----------------------')}
+            ${chalk.green('Start working hard now')}
           `);
                 }
             });
