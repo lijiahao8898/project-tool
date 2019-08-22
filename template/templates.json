@@ -1,6 +1,12 @@
 {
-  "vue-cli-3-tpl-spa": {
+  "vue-spa": {
+    "name": "vue-spa",
     "place": "lijiahao8898/vue-cli-template",
+    "branch": "#master"
+  },
+  "react-spa": {
+    "name": "react-pro",
+    "place": "lijiahao8898/react-pro",
     "branch": "#master"
   }
 }
