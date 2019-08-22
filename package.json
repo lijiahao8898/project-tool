@@ -1,11 +1,9 @@
 {
   "name": "viper-cli",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "项目自动生成工具",
-  "main": "",
-  "homepage": "",
   "bin": {
-    "viper-cli": "bin/index"
+    "viper-cli": "bin/viper-cli"
   },
   "keywords": [
     "project",
@@ -17,6 +15,7 @@
   },
   "author": "lijiahao8898",
   "license": "MIT",
+  "homepage": "",
   "dependencies": {
     "chalk": "^2.4.2",
     "commander": "^3.0.0",
