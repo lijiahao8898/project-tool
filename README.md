@@ -1,4 +1,4 @@
-# tool
+# viper-cli
 
 ## commander
 * `command` 方法是设置命令的名字
