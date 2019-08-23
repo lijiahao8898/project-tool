@@ -1,18 +1,14 @@
 {
   "name": "viper-cli",
-  "version": "1.0.3",
-  "description": "项目自动生成工具",
+  "version": "1.0.5",
+  "description": "viper template",
   "bin": {
-    "viper-cli": "bin/viper-cli"
+    "viper-cli": "bin/viper-cli.js"
   },
   "keywords": [
-    "project",
-    "tool",
+    "template",
     "cli"
   ],
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "author": "lijiahao8898",
   "license": "MIT",
   "homepage": "",
