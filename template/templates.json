@@ -1,12 +1,12 @@
 {
-  "vue-spa": {
-    "name": "vue-spa",
-    "place": "lijiahao8898/vue-cli-template",
+  "vue-cli-3-template-by-ele": {
+    "name": "vue-cli-3-template-by-ele",
+    "place": "lijiahao8898/vue-cli-3-template-by-ele",
     "branch": "#master"
   },
-  "react-spa": {
-    "name": "react-pro",
-    "place": "lijiahao8898/react-pro",
+  "react-template-by-antd": {
+    "name": "react-template-by-antd",
+    "place": "lijiahao8898/react-template-by-antd",
     "branch": "#master"
   }
 }
