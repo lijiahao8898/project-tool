@@ -1,5 +1,14 @@
 # viper-cli
 
+## use
+```
+npm i viper-cli -g / sudo npm i viper-cli -g
+```
+
+```
+viper-cli init <project name>
+```
+
 ## commander
 * `command` 方法是设置命令的名字
 * `description` 方法是设置描述

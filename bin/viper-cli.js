@@ -12,7 +12,7 @@ program.version(packageJSON.version, '-v, --version');
 program.usage('<command> [options]');
 
 program.command('init')
-    .description('Generate a new project')
+    .description('create a new project')
     .option('-i, --init [name]', 'init a new project')
     .alias('i')
     .action(async (name, cmd) => {
